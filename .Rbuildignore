@@ -1,0 +1,10 @@
+^Meta$
+^doc$
+^CRAN-RELEASE$
+^.*\.Rproj$
+^\.Rproj\.user$
+.travis.yml
+vignettes/rsconnect
+man-roxygen
+^revdep$
+cran-comments.md

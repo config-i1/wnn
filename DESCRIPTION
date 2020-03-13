@@ -1,0 +1,31 @@
+Package: wnn
+Type: Package
+Title: Weighted Nearest Neighbours
+Version: 0.0.1.41001
+Date: 2020-03-13
+Authors@R: c(person("Ivan", "Svetunkov", email = "ivan@svetunkov.ru", role = c("aut", "cre"),
+                  comment="Lecturer at Centre for Marketing Analytics and Forecasting, Lancaster University, UK"),
+             person("Carlos Eduardo", "Rodriguez Calderon", role = c("ctb"),
+                  comment="PhD student of Centre for Marketing Analytics and Forecasting, Lancaster University, UK"))
+URL: https://github.com/config-i1/wnn
+BugReports: https://github.com/config-i1/wnn/issues
+Language: en-GB
+Description: Implements functions for producing forecasts using Weighted Nearest Neighbours.
+License: GPL (>=2)
+Depends:
+    R (>= 3.6.1)
+Imports:
+    forecast,
+    stats,
+    graphics,
+    utils,
+    greybox
+Suggests:
+    smooth (>= 2.5.1),
+    testthat,
+    rmarkdown,
+    knitr
+RoxygenNote: 7.0.2
+VignetteBuilder: knitr
+Encoding: UTF-8
+Roxygen: list(old_usage = TRUE)
