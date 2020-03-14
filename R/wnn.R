@@ -55,7 +55,6 @@
 #' plot(predict(ourModel, mtcars2[-c(1:30),]))
 #'
 #' @importFrom stats formula model.frame nobs residuals
-#' @importFrom greybox actuals
 #' @export wnn
 wnn <- function(formula, data, subset, na.action){
 
@@ -145,6 +144,12 @@ wnn <- function(formula, data, subset, na.action){
 
     return(structure(list(data=dataWork,call=cl, weights=weights,
                           fitted=yFitted, residuals=errors),class=c("wnn")));
+}
+
+#' @importFrom greybox actuals
+#' @export
+actuals.wnn <- function(object, ...){
+    return(object$data[,1]);
 }
 
 #' @export
