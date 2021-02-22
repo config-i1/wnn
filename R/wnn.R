@@ -129,7 +129,8 @@ wnn <- function(formula, data, subset, na.action){
     for(i in 1:nRows){
         for(j in 1:nRows){
             for(k in 1:nCols){
-                distanceMatrix[i,j] <- distanceMatrix[i,j] + gower(dataWork[,-1][i,k], dataWork[,-1][j,k], ranges[k]);
+                distanceMatrix[i,j] <- distanceMatrix[i,j] + gower(dataWork[,-1,drop=FALSE][i,k],
+                                                                   dataWork[,-1,drop=FALSE][j,k], ranges[k]);
             }
             # Produce weights based on the distances
             distanceMatrix[i,j] <- 1-distanceMatrix[i,j] / nCols;
@@ -138,7 +139,7 @@ wnn <- function(formula, data, subset, na.action){
     # Calculate weights based on the distance matrix
     weights <- distanceMatrix / apply(distanceMatrix,1,sum);
     # Fitted values
-    yFitted <- weights %*% dataWork[,1];
+    yFitted <- weights %*% dataWork[,1,drop=FALSE];
     # Residuals
     errors <- dataWork[,1] - yFitted;
 
