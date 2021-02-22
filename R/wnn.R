@@ -139,7 +139,7 @@ wnn <- function(formula, data, subset, na.action){
     # Calculate weights based on the distance matrix
     weights <- distanceMatrix / apply(distanceMatrix,1,sum);
     # Fitted values
-    yFitted <- weights %*% dataWork[,1,drop=FALSE];
+    yFitted <- weights %*% dataWork[,1];
     # Residuals
     errors <- dataWork[,1] - yFitted;
 
