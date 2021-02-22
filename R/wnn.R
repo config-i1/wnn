@@ -115,11 +115,11 @@ wnn <- function(formula, data, subset, na.action){
 
     ## Prepare stuff for calculating weights
     # Define, where the categorical variables are used
-    factors <- sapply(dataWork[,-1], is.factor);
+    factors <- sapply(dataWork[,-1,drop=FALSE], is.factor);
     # Setup ranges of numerical variables
     ranges <- vector("numeric",nCols);
     rangesMatrix <- matrix(0,2,nCols);
-    rangesMatrix[,!factors] <- apply(dataWork[,-1][,!factors,drop=FALSE], 2, range);
+    rangesMatrix[,!factors] <- apply(dataWork[,-1,drop=FALSE][,!factors,drop=FALSE], 2, range);
     ranges[] <- rangesMatrix[2,] - rangesMatrix[1,];
 
     ## Prepare the matrix of distances:
